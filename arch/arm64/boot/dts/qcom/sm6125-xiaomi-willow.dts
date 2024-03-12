@@ -5,7 +5,7 @@
 #include "sm6125.dtsi"
 
 / {
-	model = "Xiaomi Redmi Note 8T";
+	model = "Xiaomi Redmi Note 8";
 	compatible = "xiaomi,willow", "qcom,sm6125";
 
 	aliases {
@@ -14,5 +14,17 @@
 
 	chosen {
 		stdout-path = "serial0:115200n8";
+        #address-cells = <2>;
+        #size-cells = <2>;
+        ranges;
+    
+        framebuffer0: framebuffer@5c000000 {
+            compatible = "simple-framebuffer";
+            reg = <0 0x5c000000 0 (2340 * 1080 * 4)>;
+            width = <1080>;
+            height = <2340>;
+            stride = <(1080 * 4)>;
+            format = "a8r8g8b8";
+        };
 	};
 };
