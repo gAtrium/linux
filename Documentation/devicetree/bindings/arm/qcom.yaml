@@ -70,6 +70,7 @@ description: |
         sdm660
         sdm670
         sdm845
+        sm6125
         sdx55
         sdx65
         sdx75
@@ -896,6 +897,11 @@ properties:
               - qcom,ipq6018-cp01
               - qcom,ipq6018-cp01-c1
           - const: qcom,ipq6018
+          
+      - items:
+          - enum:
+              - xiaomi,willow
+          - const: qcom,sm6125
 
       - items:
           - enum:
